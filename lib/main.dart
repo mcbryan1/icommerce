@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:icommerce/screens/welcome.dart';
-import 'package:go_router/go_router.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return MaterialApp(
       builder: (context, child) => ResponsiveWrapper.builder(child,
           maxWidth: 1000,
           minWidth: 430,
@@ -28,19 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      routeInformationParser: _router.routeInformationParser,
-      routerDelegate: _router.routerDelegate,
+      home: const WelcomeScreen(),
     );
   }
-
-  late final GoRouter _router = GoRouter(
-    initialLocation: '/',
-    routes: <GoRoute>[
-      GoRoute(
-        path: '/',
-        builder: (BuildContext context, GoRouterState state) =>
-            const WelcomeScreen(),
-      ),
-    ],
-  );
 }
