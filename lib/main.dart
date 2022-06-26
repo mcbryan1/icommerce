@@ -23,10 +23,7 @@ class MyApp extends StatelessWidget {
             const ResponsiveBreakpoint.autoScale(1000, name: TABLET)
           ]),
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      title: 'iCommerce',
       home: const WelcomeScreen(),
     );
   }

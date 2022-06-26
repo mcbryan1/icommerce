@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:icommerce/routes/bottom_navigation.dart';
 import 'package:icommerce/widgets/button/my_button.dart';
 import 'package:icommerce/widgets/text/my_text.dart';
 
@@ -23,11 +24,6 @@ class WelcomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Image(
-              image: AssetImage('assets/images/logo.png'),
-              height: 100,
-            ),
-            const SizedBox(height: 200),
             const MyText(
               text: 'iCommerce',
               textAlign: TextAlign.center,
@@ -45,8 +41,14 @@ class WelcomeScreen extends StatelessWidget {
             const SizedBox(height: 30),
             SizedBox(
                 width: double.infinity,
-                child:
-                    MyButton(text: 'Continue With Google', onPressed: () {})),
+                child: MyButton(
+                    text: 'Continue With Google',
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const BottomNavigation()));
+                    })),
             const SizedBox(height: 50),
           ],
         ),
