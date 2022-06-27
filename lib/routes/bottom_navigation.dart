@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:icommerce/constants.dart';
 import 'package:icommerce/screens/major/home/home.dart';
+import 'package:icommerce/screens/major/orders/orders.dart';
 import 'package:icommerce/screens/major/profile/profile.dart';
-import 'package:icommerce/screens/major/settings/settings.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({Key? key}) : super(key: key);
@@ -15,8 +15,8 @@ class _BottomNavigationState extends State<BottomNavigation> {
   int _currentIndex = 0;
   final List<Widget> _children = [
     const HomeScreen(),
+    const OrdersScreen(),
     const ProfileScreen(),
-    const SettingsScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -59,6 +59,19 @@ class _BottomNavigationState extends State<BottomNavigation> {
               activeIcon: SizedBox(
                 height: 22,
                 width: 22,
+                child: Image.asset('assets/images/shopping-bag.png'),
+              ),
+              icon: SizedBox(
+                height: 22,
+                width: 22,
+                child: Image.asset('assets/images/shopping-bag-outlined.png'),
+              ),
+              label: 'Settings',
+            ),
+            BottomNavigationBarItem(
+              activeIcon: SizedBox(
+                height: 22,
+                width: 22,
                 child: Image.asset('assets/images/user.png'),
               ),
               icon: SizedBox(
@@ -67,19 +80,6 @@ class _BottomNavigationState extends State<BottomNavigation> {
                 child: Image.asset('assets/images/user-outlined.png'),
               ),
               label: 'Profile',
-            ),
-            BottomNavigationBarItem(
-              activeIcon: SizedBox(
-                height: 22,
-                width: 22,
-                child: Image.asset('assets/images/settings.png'),
-              ),
-              icon: SizedBox(
-                height: 22,
-                width: 22,
-                child: Image.asset('assets/images/settings-outlined.png'),
-              ),
-              label: 'Settings',
             ),
           ],
         ),
