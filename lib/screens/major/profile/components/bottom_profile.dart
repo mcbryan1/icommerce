@@ -50,8 +50,8 @@ class _BottomProfileState extends State<BottomProfile> {
             ),
             subtitle: MyText(
               text: 'Manage your account',
-              fontSize: 15,
-              fontWeight: FontWeight.w600,
+              fontSize: 14,
+              fontWeight: FontWeight.w400,
             ),
             trailing: Icon(
               Icons.arrow_forward_ios,
